@@ -17,10 +17,11 @@ public class Config{
         // if else
         if (driverType.equalsIgnoreCase("ch")) {
             ChromeOptions options = new ChromeOptions();
-            //options.setHeadless(true);
+            options.setHeadless(false);
             options.addArguments("--incognito");
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver(options);
+
         } else if (driverType.equalsIgnoreCase("ff")) {
             WebDriverManager.firefoxdriver().setup();
             driver = new FirefoxDriver();
